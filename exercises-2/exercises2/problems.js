@@ -16,10 +16,10 @@ window.answers = () => {
     // #2 This code sets output to true if input is not zero
     // Change the condition so that output will equal true only if input is an even number greater than 20 or an odd number less than 10
     let output = false
-    if (input  % 2 ==0) {
+    if (input % 2 == 0) {
         output = input > 20 ? true : false
-    } else  {
-        output = input <10 ? true : false
+    } else {
+        output = input < 10 ? true : false
     }
     //output = (input > 20) && (input % 2) ? true : false
 
@@ -28,21 +28,21 @@ window.answers = () => {
 
 
     // #4 Write a for-loop that uses console.log to print out the numbers from 1 to 10 (inclusive) in ascending order
-    for (let index = 1; index <=10; index++) {
-        console.log(index); 
+    for (let index = 1; index <= 10; index++) {
+        console.log(index);
     }
 
     // #5 Write a for-loop that uses console.log to print out the numbers from 1 to 10 (inclusive) in descending order
 
-    for (index = 10; index >=1; index--) {
-        console.log(index); 
+    for (index = 10; index >= 1; index--) {
+        console.log(index);
     }
     // #6 Write a for-loop that will add up all the positive integers below 100 and store it in the sum variable
     let sum = 0
     // For loop goes here:
     for (index = 0; index < 100; index++) {
-        sum+= index;
-        
+        sum += index;
+
     }
 
     // #7 This for loop prints a 3x3 square of #s. Use a nested for-loop to make it print a square of numbers instead (123, 456, 789)
@@ -61,6 +61,14 @@ window.answers = () => {
     let number2 = 1820
     let lcf = 0
     for (let index = 0; index <= number1 && index <= number2; index++) {
+        if (!number1) {
+            lcf = number2
+            break
+        }
+        if (!number2) {
+            lcf = number1
+            break
+        }
         // if (number1 % number2 !==number1) {
         //     lcf = number2
         //     break
@@ -69,7 +77,7 @@ window.answers = () => {
         //     lcf = number1
         //     break
         // }
-        if ((number1 % index ==0) && (number2 % index == 0))  {
+        if ((number1 % index == 0) && (number2 % index == 0)) {
             lcf = index;
         }
     }
@@ -91,8 +99,7 @@ window.answers = () => {
         bigFib = num1 + num2
         num1 = num2
         num2 = bigFib
-
-        console.log(num1,num2,bigFib)
+        console.log(num1, num2, bigFib)
     }
 
     // #10 (Bonus hard challenge)
@@ -100,57 +107,57 @@ window.answers = () => {
     // For example, 3**2 + 4**2 = 9 + 16 = 25 = 5**2.
     // There exists exactly one Pythagorean  triplet for which a + b + c = 1000.
     // Find a, b, and c
-    let a =0
-    let b =0
-    let c= 0
-    for (let index = 0; index < 1000; index++) {
-        if((a**2)+(b**2)==c**2){
-            if(a+b+c ==1000) {
-                break
+    let a = 0
+    let b = 0
+    let c = 0
+    pythogras:
+    for (a = 0; a <= 1000; a++) {
+        for (b = 0; b <= 1000; b++) {
+            for (c = 0; c <= 1000; c++) {
+                if (((a ** 2) + (b ** 2) == c ** 2) && ((a + b + c == 1000) && (a < b && b < c))) {
+                    break pythogras;
+
+                }
             }
         }
-        a++
-        b++
-        c++
-        
     }
     // Solution goes here:
 
 
     // #11 Complete this function so that it returns the product of the three numbers (the three numbers multiplied together)
-    function product (num1, num2, num3) {
-        return num1*num2*num3
+    function product(num1, num2, num3) {
+        return num1 * num2 * num3
     }
 
     // #12 Write a function called 'exclaim' that takes a single string and logs it with an exclamation mark after it
     // For example, exclaim("hello") should log "hello!" to the console
     function exclaim(string) {
-        text = string +"!"
+        text = string + "!"
         console.log(text)
-     }
+    }
 
     // #13 We would like "A", "B", "C", "D", "E" to be printed in the correct order.
     // Make that happen by invoking the right functions in the correct order.
     // Do not modify the functions themselves!
-    function theFirst () {
+    function theFirst() {
         theSecond()
         console.log("B")
     }
 
-    function theSecond () {
+    function theSecond() {
         console.log("A")
     }
 
-    function theThird () {
+    function theThird() {
         console.log("C")
         theFourth()
     }
 
-    function theFourth () {
+    function theFourth() {
         theFifth()
     }
 
-    function theFifth () {
+    function theFifth() {
         console.log("D")
         console.log("E")
     }
@@ -160,10 +167,10 @@ window.answers = () => {
 
     // #14 Write a function called largestCommonFactor that takes two number
     // and returns the largest common factor of those numbers
-    function largestCommonFactor (num1,num2) {
+    function largestCommonFactor(num1, num2) {
         let bigFib = 0
         for (let index = 0; index <= num1 && index <= num2; index++) {
-            if ((num1 % index ==0) && (num2 % index == 0))  {
+            if ((num1 % index == 0) && (num2 % index == 0)) {
                 lcf = index;
             }
         }

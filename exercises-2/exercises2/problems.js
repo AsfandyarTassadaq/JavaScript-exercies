@@ -16,15 +16,15 @@ window.answers = () => {
     // #2 This code sets output to true if input is not zero
     // Change the condition so that output will equal true only if input is an even number greater than 20 or an odd number less than 10
     let output = false
-    if (input > 20 && (input % 2) ==0) {
-        output = true
-    } else if (input <10 && (input % 2) !==0) {
-        output =false
+    if (input  % 2 ==0) {
+        output = input > 20 ? true : false
+    } else  {
+        output = input <10 ? true : false
     }
-
+    //output = (input > 20) && (input % 2) ? true : false
 
     // #3 Use a ternary operator (x = cond ? a : b) so that if there is exactly 1 rabbit, this line instead results in "There is 1 rabbit"
-    const rabbitString = numRabbits==1 ?"There is 1 rabbit" : "There are " +  numRabbits + " rabbits"
+    const rabbitString = numRabbits == 1 ? "There is 1 rabbit" : "There are " + numRabbits + " rabbits"
 
 
     // #4 Write a for-loop that uses console.log to print out the numbers from 1 to 10 (inclusive) in ascending order

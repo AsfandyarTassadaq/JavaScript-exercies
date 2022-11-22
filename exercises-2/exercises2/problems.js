@@ -100,20 +100,34 @@ window.answers = () => {
     // For example, 3**2 + 4**2 = 9 + 16 = 25 = 5**2.
     // There exists exactly one Pythagorean  triplet for which a + b + c = 1000.
     // Find a, b, and c
-    let a
-    let b
-    let c
+    let a =0
+    let b =0
+    let c= 0
+    for (let index = 0; index < 1000; index++) {
+        if((a**2)+(b**2)==c**2){
+            if(a+b+c ==1000) {
+                break
+            }
+        }
+        a++
+        b++
+        c++
+        
+    }
     // Solution goes here:
 
 
     // #11 Complete this function so that it returns the product of the three numbers (the three numbers multiplied together)
     function product (num1, num2, num3) {
-
+        return num1*num2*num3
     }
 
     // #12 Write a function called 'exclaim' that takes a single string and logs it with an exclamation mark after it
     // For example, exclaim("hello") should log "hello!" to the console
-
+    function exclaim(string) {
+        text = string +"!"
+        console.log(text)
+     }
 
     // #13 We would like "A", "B", "C", "D", "E" to be printed in the correct order.
     // Make that happen by invoking the right functions in the correct order.
@@ -141,13 +155,19 @@ window.answers = () => {
         console.log("E")
     }
     // Invoke your chosen function(s) after this line:
-
+    theFirst()
+    theThird()
 
     // #14 Write a function called largestCommonFactor that takes two number
     // and returns the largest common factor of those numbers
-    function largestCommonFactor () {
-
+    function largestCommonFactor (num1,num2) {
+        let bigFib = 0
+        for (let index = 0; index <= num1 && index <= num2; index++) {
+            if ((num1 % index ==0) && (num2 % index == 0))  {
+                lcf = index;
+            }
+        }
+        return lcf
     }
-
 
 };

@@ -69,14 +69,6 @@ window.answers = () => {
             lcf = number1
             break
         }
-        // if (number1 % number2 !==number1) {
-        //     lcf = number2
-        //     break
-        // }
-        // else if (number2 % number1 !==number2) {
-        //     lcf = number1
-        //     break
-        // }
         if ((number1 % index == 0) && (number2 % index == 0)) {
             lcf = index;
         }

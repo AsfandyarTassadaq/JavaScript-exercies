@@ -10,25 +10,18 @@
 */
 
 function encrypt(text, n) {
-    if (n <= 0) {
+    if (n <= 0 || !text) {
         return text
     }
     text = text.split("")
-    console.log("original text: " + text.join("") + "n: " + n)
-    var encrypted1 = ``
-
-    while (n > 0) {
-        for (let i = 1; i < text.length; i+=2) {
-            encrypted1+=text[i]  
+    while (n--) {
+        var right = []
+        var left = []
+        for (let i = 0; i < text.length; i++) {
+            (i % 2 == 0) ? right += text[i] : left += text[i]
         }
-        for (let j = 0; j < text.length; j+=2) {
-            encrypted1=text[j]
-            
-        }
-        text = encrypted1
-        n--
+        text = left + right
     }
-
     return (text)
 }
 
@@ -42,7 +35,19 @@ function encrypt(text, n) {
 */
 
 function decrypt(cipherText, n) {
-
+    if (n <= 0 || !cipherText) {
+        return cipherText
+    }
+    text = cipherText.split("")
+    while (n--) {
+        var right = []
+        var left = []
+        for (let i = 0; i < text.length; i++) {
+            (i % 2 !== 0) ? right += text[i] : left += text[i]
+        }
+        text = left + right
+    }
+    return (text)
 }
 
 // Do not modify this code
